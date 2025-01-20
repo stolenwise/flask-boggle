@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Boggle Game</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+</head>
+<body>
+    <h1>Boggle Game</h1>
+    <h2>Highest Score: <span id="highest-score">0</span></h2>
+    <h2>Games Played: <span id="num-plays">0</span></h2>
+    <table>
+    {% for row in board %}
+    <tr>
+        {% for letter in row %}
+        <td>{{ letter }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </table>
+    <form id="guess-form">
+        <label for="guess">Guess:</label>
+        <input type="text" id="guess" name="guess" required>
+        <button type="submit">Submit</button>
+
+    </form>
+    <h2>Score: <span id="score">0</span></h2>
+    <h2>Guessed Words:</h2>
+    <ul id="guessed-words"></ul>
+    <h2>Time Remaining: <span id="timer" style="color: black; font-size: 16px;">60</span> seconds</h2>
+    <button id="restart-button">Restart</button>
+
+    <!-- Display the result of the guess -->
+    <div id="result"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
